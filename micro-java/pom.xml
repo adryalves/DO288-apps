@@ -104,8 +104,10 @@
             <maven.home>${maven.home}</maven.home>
           </systemPropertyVariables>
         </configuration>
-      </plugin>
-      <!-- Adding the jkube plugin configuration here -->
+</plugin>
+<properties> 
+	<jkube.build.switchToDeployment>true</jkube.build.switchToDeployment>
+</properties>
     </plugins>
   </build>
   <profiles>
@@ -137,7 +139,11 @@
               </execution>
             </executions>
           </plugin>
-        </plugins>
+  </plugins>
+   <plugin>
+     <groupId>org.eclipse.jkube</groupId>1
+     <artifactId>openshift-maven-plugin</artifactId>
+     <version>1.2.0</version>
       </build>
       <properties>
         <quarkus.package.type>native</quarkus.package.type>
